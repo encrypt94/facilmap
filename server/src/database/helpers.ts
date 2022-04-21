@@ -238,8 +238,6 @@ export default class DatabaseHelpers {
 			}
 
 			const Pad = this._db.pads.PadModel.build({ id: padId });
-			console.log(condition)
-			console.log(this._db._conn.model(type).getTableName())
 			const objs: Array<Model> = await (Pad as any)["get" + this._db._conn.model(type).getTableName()](condition);
 
 			return objs.map((obj) => {
