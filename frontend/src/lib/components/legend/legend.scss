@@ -4,10 +4,4 @@
 	bottom: 25px;
 	z-index: 800;
 	transform-origin: bottom right;
-	opacity: .7;
-	transition: opacity .7s;
-
-	&:hover {
-		opacity: 1;
-	}
 }

@@ -8,13 +8,6 @@
 		min-height: 6rem;
 		width: 29.5rem;
 
-		transition: opacity .7s,background-color .7s,border-color .7s;
-		opacity: .7;
-
-		&:hover,&.hasFocus {
-			opacity: 1;
-		}
-
 		.nav-tabs .nav-item a {
 			padding: 0.1rem 0.3rem;
 		}
@@ -163,14 +156,4 @@
 		height: 20px;
 	}
 
-	opacity: 0.5;
-	transition: opacity .7s;
-
-	/* .fm-search-box:not(:hover):not(.fm-hasResults):not(.fm-hasFocus) & {
-		opacity: 0;
-	} */
-
-	.fm-search-box:hover &,.fm-search-box.hasFocus & {
-		opacity: 1;
-	}
 }

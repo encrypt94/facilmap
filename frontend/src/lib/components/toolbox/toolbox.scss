@@ -23,14 +23,6 @@
 		}
 	}
 
-	.fm-sidebar:not(.isNarrow) {
-		opacity: .5;
-		transition: opacity .7s;
-
-		&:hover {
-			opacity: 1;
-		}
-	}
 
 	@media print {
 		display: none;
