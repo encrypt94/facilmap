@@ -1,6 +1,6 @@
 import { DataTypes, Model } from "sequelize";
 import { BboxWithZoom, ID, Latitude, Longitude, Marker, MarkerCreate, MarkerUpdate, PadId } from "facilmap-types";
-import { BboxWithExcept, dataDefinition, DataModel, getPosType, getVirtualLatType, getVirtualLonType, makeBboxCondition, makeNotNullForeignKey, validateColour } from "./helpers";
+import { BboxWithExcept, dataDefinition, DataModel, getPosType, getVirtualLatType, getVirtualLonType, makeNotNullForeignKey, validateColour } from "./helpers";
 import Database from "./database";
 import { getElevationForPoint } from "../elevation";
 
@@ -71,7 +71,7 @@ export default class DatabaseMarkers {
 	}
 
 	getPadMarkers(padId: PadId, bbox?: BboxWithZoom & BboxWithExcept): Highland.Stream<Marker> {
-		return this._db.helpers._getPadObjects<Marker>("Marker", padId, { where: makeBboxCondition(bbox) });
+		return this._db.helpers._getPadObjects<Marker>("Marker", padId, { where: this._db.helpers.makeBboxCondition(bbox) });
 	}
 
 	getPadMarkersByType(padId: PadId, typeId: ID): Highland.Stream<Marker> {
