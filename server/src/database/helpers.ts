@@ -357,7 +357,7 @@ export default class DatabaseHelpers {
 	}
 
 	makeBboxCondition(bbox: BboxWithExcept | null | undefined, posField = "pos"): WhereOptions {
-		const dbType  = this._db._conn.options.dialect
+		const dbType  = this._db._conn.getDialect()
 		if(!bbox)
 			return { };
 
